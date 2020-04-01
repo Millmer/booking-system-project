@@ -1,0 +1,36 @@
+# This compose is used to replicate the production environment locally
+# This is all it's used for in the scope of this project
+
+version: "3"
+services:    
+  app:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://user:pass@postgres:5432/bookings
+      NODE_ENV: dev
+      PORT: 3000
+      JWT_SECRET: supersecretsecret
+      AWS_ACCESS_KEY_ID: abc
+      AWS_SECRET_ACCESS_KEY: xyz
+      ROOT_API_PATH: https://localhost:3000/api
+      FRONTEND_PATH: https://localhost:8080
+      BOOKINGS_EMAIL: bookings@example.com
+      IMAGES_ROOT_PATH: https://localhost:8080/emails/images
+      IMAGE_UPLOAD_BUCKET: image-data-dev
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    volumes:
+      - .:/app/
+      - /app/node_modules
+
+  postgres:
+    image: postgres:11.5
+    ports:
+      - "35432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: bookings

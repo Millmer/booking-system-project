@@ -1,0 +1,46 @@
+{
+  "name": "be-booking-system",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Back-End Repository for the booking system project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/start.js",
+    "start:docker": "npm run migrate:latest && npm run start",
+    "dev": "nodemon ./bin/start.js",
+    "migrate:latest": "node ./bin/migrate.js",
+    "seed": "node ./bin/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:Millmer/booking-system-project.git"
+  },
+  "keywords": [],
+  "author": "James Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Millmer/booking-system-project/issues"
+  },
+  "homepage": "https://github.com/Millmer/booking-system-project#readme",
+  "dependencies": {
+    "aws-sdk": "^2.625.0",
+    "bcrypt": "^3.0.7",
+    "bent": "^7.1.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.20.9",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "node-cron": "^2.0.3",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.18.1",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
