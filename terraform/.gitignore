@@ -1,0 +1,23 @@
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
+
+# Ignore env files
+.env*
+!.env.example
+
+# Ignore zip files
+*.zip
+
+# NPM-related
+node_modules
+npm-debug.log*
+
+#.DS_Store
+.DS_Store

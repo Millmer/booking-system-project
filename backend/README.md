@@ -6,6 +6,7 @@ Back-End Repository for booking system. It servers both the Admin Dashboard and 
 - Validation middleware (using something like Joy)
 - Add ORM system for easier management of models (Like sequelize)
 - Build scripts and automatic deployment pipeline (connecting with AWS CodeBuild and Pipeline)
+- Module loader scripts
 - Monthly trash collected tracker system (business requirement)
 
 # Local Setup

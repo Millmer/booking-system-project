@@ -1,0 +1,87 @@
+[
+  {
+    "name": "${app_name}",
+    "image": "${app_image}",
+    "essential": true,
+    "cpu": ${fargate_cpu},
+    "memory": ${fargate_memory},
+    "network_mode": "awsvpc",
+    "portMappings": [
+      {
+        "containerPort": ${app_port},
+        "hostPort": ${app_port},
+        "protocol": "tcp"
+      }
+    ],
+    "environment": [
+      {
+        "name": "NODE_ENV",
+        "value": "${environment}"
+      },
+      {
+        "name": "AWS_ACCESS_KEY_ID",
+        "value": "${aws_access_key_id}"
+      },
+      {
+        "name": "AWS_SECRET_ACCESS_KEY",
+        "value": "${aws_secret_access_key}"
+      },
+      {
+        "name": "ROOT_API_PATH",
+        "value": "${root_api_path}"
+      },
+      {
+        "name": "FRONTEND_PATH",
+        "value": "${frontend_path}"
+      },
+      {
+        "name": "IMAGES_ROOT_PATH",
+        "value": "${images_root_path}"
+      },
+      {
+        "name": "IMAGE_UPLOAD_BUCKET",
+        "value": "${image_upload_bucket}"
+      },
+      {
+        "name": "BOOKINGS_EMAIL",
+        "value": "${bookings_email}"
+      },
+      {
+        "name": "PORT",
+        "value": "${app_port}"
+      },
+      {
+        "name": "JWT_SECRET",
+        "value": "${jwt_secret}"
+      },
+      {
+        "name": "PGPORT",
+        "value": "${master_port}"
+      },
+      {
+        "name": "PGHOST",
+        "value": "${master_host}"
+      },
+      {
+        "name": "PGDATABASE",
+        "value": "${master_db}"
+      },
+      {
+        "name": "PGUSER",
+        "value": "${master_username}"
+      },
+      {
+        "name": "PGPASSWORD",
+        "value": "${master_password}"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${log_group}",
+        "awslogs-region": "${aws_region}",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+]

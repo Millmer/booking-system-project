@@ -18,7 +18,7 @@ services:
       FRONTEND_PATH: https://localhost:8080
       BOOKINGS_EMAIL: bookings@example.com
       IMAGES_ROOT_PATH: https://localhost:8080/emails/images
-      IMAGE_UPLOAD_BUCKET: image-data-dev
+      IMAGE_UPLOAD_BUCKET: bookings-image-data-dev
     ports:
       - "3000:3000"
     command: npm run dev
